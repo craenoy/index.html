@@ -6,136 +6,104 @@
 <title>TEAMNOY</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#08050d;
+color:white;
+min-height:100vh;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #08050d;
-  color: white;
+header{
+padding:25px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #24152f;
 }
 
-header {
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #28123d;
+.logo{
+font-size:25px;
+font-weight:bold;
+color:#c875ff;
+text-shadow:0 0 15px #9b35ff;
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: 900;
-  color: #b65cff;
-  letter-spacing: 2px;
+.btn{
+background:#9b35ff;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px #7b20d8;
 }
 
-nav a {
-  color: #ddd;
-  text-decoration: none;
-  margin-left: 18px;
+.hero{
+text-align:center;
+padding:90px 20px 50px;
 }
 
-.hero {
-  text-align: center;
-  padding: 90px 20px;
-  background:
-    radial-gradient(circle at center, #35105a 0%, #100817 40%, #08050d 75%);
+.hero h1{
+font-size:55px;
+color:#d58aff;
+text-shadow:0 0 25px #9b35ff;
 }
 
-.hero h1 {
-  font-size: clamp(45px, 12vw, 90px);
-  letter-spacing: 5px;
-  color: white;
-  text-shadow: 0 0 25px #9b3cff;
+.hero p{
+margin-top:15px;
+color:#aaa;
 }
 
-.hero p {
-  margin-top: 15px;
-  color: #bcaecc;
+.card{
+width:90%;
+max-width:700px;
+margin:35px auto;
+padding:30px;
+background:#100b18;
+border:1px solid #6d249b;
+border-radius:18px;
+box-shadow:0 0 30px #36104d;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 25px;
-  border-radius: 10px;
-  background: #8f32d6;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 20px #7625b5;
+.card h2{
+margin-bottom:20px;
+color:#d58aff;
 }
 
-section {
-  padding: 55px 7%;
+input{
+width:100%;
+padding:14px;
+margin:8px 0 15px;
+border-radius:9px;
+border:1px solid #54206f;
+background:#08050d;
+color:white;
+outline:none;
 }
 
-.title {
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #c77aff;
+input:focus{
+border-color:#c05cff;
+box-shadow:0 0 10px #7b20d8;
 }
 
-.card {
-  background: #110b18;
-  border: 1px solid #342047;
-  border-radius: 16px;
-  padding: 25px;
-  margin-bottom: 18px;
+.join{
+display:block;
+text-align:center;
+margin-top:15px;
+background:#9b35ff;
+padding:14px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
-.world-name {NOYYNTEL
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.world-link {
-  display: block;
-  margin-top: 10px;
-  color: #b85cff;
-  word-break: break-all;
-}
-
-.edit-box {
-  margin-top: 20px;
-  padding: 20px;
-  background: #0d0812;
-  border-radius: 12px;
-  border: 1px solid #2d183d;
-}
-
-input {
-  width: 100%;
-  padding: 13px;
-  margin-top: 8px;
-  margin-bottom: 15px;
-  background: #17101e;
-  color: white;
-  border: 1px solid #43265a;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-button {
-  width: 100%;
-  padding: 13px;
-  border: 0;
-  border-radius: 8px;
-  background: #8f32d6;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #77677f;
-  border-top: 1px solid #28123d;
+footer{
+text-align:center;
+padding:40px;
+color:#666;
 }
 </style>
 </head>
@@ -143,96 +111,45 @@ footer {
 <body>
 
 <header>
-  <div class="logo">TEAMNOY</div>
-
-  <nav>
-    <a href="#world">World</a>
-    <a href="#join">Join</a>
-  </nav>
+<div class="logo">TEAMNOY</div>
+<a class="btn" href="#world">ENTER</a>
 </header>
 
-<div class="hero">
-  <h1>TEAMNOY</h1>
-  <p>Welcome to the official TeamNoy community.</p>
-  <a class="btn" href="#world">ENTER WORLD</a>
+<section class="hero">
+<h1>TEAMNOY</h1>
+<p>Your world. Your community.</p>
+</section>
+
+<div class="card" id="world">
+<h2>WORLD INFORMATION</h2>
+
+<label>World Name</label>
+<input id="worldName" value="TEAMNOY WORLD">
+
+<label>World Link</label>
+<input id="worldLink" value="https://example.com">
+
+<a id="joinButton" class="join" href="https://example.com" target="_blank">
+ENTER WORLD
+</a>
 </div>
 
-<section id="world">
-  <h2 class="title">CURRENT WORLD</h2>
-
-  <div class="card">
-    <div class="world-name" id="worldName">
-      TEAMNOY WORLD
-    </div>
-
-    <a
-      class="world-link"
-      id="worldLink"
-      href="https://example.com"
-      target="_blank"
-    >
-      https://example.com
-    </a>
-
-    <div class="edit-box">
-      <label>World Name</label>
-      <input
-        id="nameInput"
-        type="text"
-        value="TEAMNOY WORLD"
-      >
-
-      <label>World Link</label>
-      <input
-        id="linkInput"
-        type="url"
-        value="https://example.com"
-      >
-
-      <button onclick="updateWorld()">
-        UPDATE WORLD
-      </button>
-    </div>
-  </div>
-</section>
-
-<section id="join">
-  <h2 class="title">JOIN TEAM</h2>
-
-  <div class="card">
-    <p>
-      Want to become part of TEAMNOY?
-      Join our community and stay updated.
-    </p>
-
-    <a class="btn" href="#" onclick="return false;">
-      JOIN COMMUNITY
-    </a>
-  </div>
-</section>
-
 <footer>
-  © 2026 TEAMNOY — All Rights Reserved
+© 2026 TEAMNOY
 </footer>
 
 <script>
-function updateWorld() {
-  const name = document.getElementById("nameInput").value.trim();
-  const link = document.getElementById("linkInput").value.trim();
+const nameInput=document.getElementById("worldName");
+const linkInput=document.getElementById("worldLink");
+const button=document.getElementById("joinButton");
 
-  if (!name || !link) {
-    alert("Please fill in both fields.");
-    return;
-  }
-
-  document.getElementById("worldName").textContent = name;
-
-  const worldLink = document.getElementById("worldLink");
-  worldLink.textContent = link;
-  worldLink.href = link;
-
-  alert("World updated!");
+function updateWorld(){
+button.textContent="ENTER "+nameInput.value;
+button.href=linkInput.value;
 }
+
+nameInput.addEventListener("input",updateWorld);
+linkInput.addEventListener("input",updateWorld);
 </script>
 
 </body>
