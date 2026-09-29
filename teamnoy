@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAMNOY</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #08050d;
+  color: white;
+}
+
+header {
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #28123d;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: #b65cff;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(circle at center, #35105a 0%, #100817 40%, #08050d 75%);
+}
+
+.hero h1 {
+  font-size: clamp(45px, 12vw, 90px);
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 0 0 25px #9b3cff;
+}
+
+.hero p {
+  margin-top: 15px;
+  color: #bcaecc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 25px;
+  border-radius: 10px;
+  background: #8f32d6;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 20px #7625b5;
+}
+
+section {
+  padding: 55px 7%;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #c77aff;
+}
+
+.card {
+  background: #110b18;
+  border: 1px solid #342047;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 18px;
+}
+
+.world-name {NOYYNTEL
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.world-link {
+  display: block;
+  margin-top: 10px;
+  color: #b85cff;
+  word-break: break-all;
+}
+
+.edit-box {
+  margin-top: 20px;
+  padding: 20px;
+  background: #0d0812;
+  border-radius: 12px;
+  border: 1px solid #2d183d;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  background: #17101e;
+  color: white;
+  border: 1px solid #43265a;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  background: #8f32d6;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #77677f;
+  border-top: 1px solid #28123d;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TEAMNOY</div>
+
+  <nav>
+    <a href="#world">World</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>TEAMNOY</h1>
+  <p>Welcome to the official TeamNoy community.</p>
+  <a class="btn" href="#world">ENTER WORLD</a>
+</div>
+
+<section id="world">
+  <h2 class="title">CURRENT WORLD</h2>
+
+  <div class="card">
+    <div class="world-name" id="worldName">
+      TEAMNOY WORLD
+    </div>
+
+    <a
+      class="world-link"
+      id="worldLink"
+      href="https://example.com"
+      target="_blank"
+    >
+      https://example.com
+    </a>
+
+    <div class="edit-box">
+      <label>World Name</label>
+      <input
+        id="nameInput"
+        type="text"
+        value="TEAMNOY WORLD"
+      >
+
+      <label>World Link</label>
+      <input
+        id="linkInput"
+        type="url"
+        value="https://example.com"
+      >
+
+      <button onclick="updateWorld()">
+        UPDATE WORLD
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <h2 class="title">JOIN TEAM</h2>
+
+  <div class="card">
+    <p>
+      Want to become part of TEAMNOY?
+      Join our community and stay updated.
+    </p>
+
+    <a class="btn" href="#" onclick="return false;">
+      JOIN COMMUNITY
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 TEAMNOY — All Rights Reserved
+</footer>
+
+<script>
+function updateWorld() {
+  const name = document.getElementById("nameInput").value.trim();
+  const link = document.getElementById("linkInput").value.trim();
+
+  if (!name || !link) {
+    alert("Please fill in both fields.");
+    return;
+  }
+
+  document.getElementById("worldName").textContent = name;
+
+  const worldLink = document.getElementById("worldLink");
+  worldLink.textContent = link;
+  worldLink.href = link;
+
+  alert("World updated!");
+}
+</script>
+
+</body>
+</html>
